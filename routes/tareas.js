@@ -23,7 +23,17 @@ var vartareas = [
     }
 ]
 router.get('/', function(req, res, next) {
-    res.render('tareas', {title: 'Tareas', tareas: vartareas});
+    res.render('tareas', {title: 'Tareas', tareas:vartareas});
 });
-
+router.post('/crear', function(req,res,next) {
+    var arrTags = req.body.etiquetes;
+    arrTags = arrTags.split(',');
+    var nuevaTarea = {
+        nom: req.body.nom,
+        etiquetes: arrTags,
+        realització: req.body.realit
+    }
+    vartareas.push(nuevaTarea);
+    res.redirect('/tareas');
+});
 module.exports = router;

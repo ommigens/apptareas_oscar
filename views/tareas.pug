@@ -7,6 +7,6 @@ block content
         div.well
           h3 #{tarea.nom}
           .progress.progress-striped.active
-            .progress-bar(role='progressbar', aria-valuenow='tarea.realització', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.realització+'%')   #{tarea.realització}% completado
+            .progress-bar.progress-bar-success(role='progressbarsuccess', aria-valuenow='tarea.realització', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.realització+'%')   #{tarea.realització}% completado
  form.form-inline(role='form', action='tareas/nueva')
-  button.btn.btn-primary(type='submit') Nueva Tarea
+  button.btn.btn-success(type='submit') Nueva Tarea
