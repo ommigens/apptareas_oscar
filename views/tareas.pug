@@ -1,0 +1,12 @@
+extends layout
+
+block content
+ .page-header
+  h1 #{title}
+      each tarea in tareas
+        div.well
+          h3 #{tarea.nom}
+          .progress.progress-striped.active
+            .progress-bar(role='progressbar', aria-valuenow='tarea.realització', aria-valuemin='0', aria-valuemax='100', style='width:'+tarea.realització+'%')   #{tarea.realització}% completado
+ form.form-inline(role='form', action='tareas/nueva')
+  button.btn.btn-primary(type='submit') Nueva Tarea

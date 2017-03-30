@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  .page-header
+    #{title}
+        form(method='post',action='/tareas/crear')
+          .form-group
+            label(for='email') Tarea
+            input.form-control(type='text', name='nom')
+          .form-group
+            label(for='email') Etiquetas
+            input.form-control(type='text', name='etiquetes')
+          .form-group
+            label(for='exampleSelect1') %
+            input.form-control(type='number', name='realit')
+            br
+            input.btn.btn-md.btn-danger(type='submit')
